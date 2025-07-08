@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link rel="shortcut icon" href="https://tse2.mm.bing.net/th/id/OIP.1fQzm0cWV2MZIcMpqPjoaQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Dự đoán Nursery</title>
 </head>
@@ -10,80 +11,96 @@
     <h2>Dự đoán phân loại trẻ (Nursery Dataset)</h2>
 
     <form method="POST">
-        <label>Parents</label>
-        <select name="parents" required>
-            <option value="" disabled {% if not values.get('parents') %}selected{% endif %}>-- Chọn --</option>
-            <option value="usual" {% if values.get('parents')=='usual' %}selected{% endif %}>usual</option>
-            <option value="pretentious" {% if values.get('parents')=='pretentious' %}selected{% endif %}>pretentious
-            </option>
-            <option value="great_pret" {% if values.get('parents')=='great_pret' %}selected{% endif %}>great_pret
-            </option>
-        </select>
+        <div class="field field-1">
+            <label>Parents</label>
+            <select name="parents" required>
+                <option value="" disabled {% if not values.get('parents') %}selected{% endif %}>-- Chọn --</option>
+                <option value="usual" {% if values.get('parents')=='usual' %}selected{% endif %}>usual</option>
+                <option value="pretentious" {% if values.get('parents')=='pretentious' %}selected{% endif %}>pretentious
+                </option>
+                <option value="great_pret" {% if values.get('parents')=='great_pret' %}selected{% endif %}>great_pret
+                </option>
+            </select>
+        </div>
 
-        <label>Has Nursery</label>
-        <select name="has_nurs" required>
-            <option value="" disabled {% if not values.get('has_nurs') %}selected{% endif %}>-- Chọn --</option>
-            <option value="proper" {% if values.get('has_nurs')=='proper' %}selected{% endif %}>proper</option>
-            <option value="less_proper" {% if values.get('has_nurs')=='less_proper' %}selected{% endif %}>less_proper
-            </option>
-            <option value="improper" {% if values.get('has_nurs')=='improper' %}selected{% endif %}>improper</option>
-            <option value="critical" {% if values.get('has_nurs')=='critical' %}selected{% endif %}>critical</option>
-            <option value="very_crit" {% if values.get('has_nurs')=='very_crit' %}selected{% endif %}>very_crit</option>
-        </select>
+        <div class="field field-2">
+            <label>Has Nursery</label>
+            <select name="has_nurs" required>
+                <option value="" disabled {% if not values.get('has_nurs') %}selected{% endif %}>-- Chọn --</option>
+                <option value="proper" {% if values.get('has_nurs')=='proper' %}selected{% endif %}>proper</option>
+                <option value="less_proper" {% if values.get('has_nurs')=='less_proper' %}selected{% endif %}>less_proper
+                </option>
+                <option value="improper" {% if values.get('has_nurs')=='improper' %}selected{% endif %}>improper</option>
+                <option value="critical" {% if values.get('has_nurs')=='critical' %}selected{% endif %}>critical</option>
+                <option value="very_crit" {% if values.get('has_nurs')=='very_crit' %}selected{% endif %}>very_crit</option>
+            </select>
+        </div>
 
-        <label>Form</label>
-        <select name="form" required>
-            <option value="" disabled {% if not values.get('form') %}selected{% endif %}>-- Chọn --</option>
-            <option value="complete" {% if values.get('form')=='complete' %}selected{% endif %}>complete</option>
-            <option value="completed" {% if values.get('form')=='completed' %}selected{% endif %}>completed</option>
-            <option value="incomplete" {% if values.get('form')=='incomplete' %}selected{% endif %}>incomplete</option>
-            <option value="foster" {% if values.get('form')=='foster' %}selected{% endif %}>foster</option>
-        </select>
+        <div class="field field-3">
+            <label>Form</label>
+            <select name="form" required>
+                <option value="" disabled {% if not values.get('form') %}selected{% endif %}>-- Chọn --</option>
+                <option value="complete" {% if values.get('form')=='complete' %}selected{% endif %}>complete</option>
+                <option value="completed" {% if values.get('form')=='completed' %}selected{% endif %}>completed</option>
+                <option value="incomplete" {% if values.get('form')=='incomplete' %}selected{% endif %}>incomplete</option>
+                <option value="foster" {% if values.get('form')=='foster' %}selected{% endif %}>foster</option>
+            </select>
+        </div>
 
-        <label>Children</label>
-        <select name="children" required>
-            <option value="" disabled {% if not values.get('children') %}selected{% endif %}>-- Chọn --</option>
-            <option value="1" {% if values.get('children')=='1' %}selected{% endif %}>1</option>
-            <option value="2" {% if values.get('children')=='2' %}selected{% endif %}>2</option>
-            <option value="3" {% if values.get('children')=='3' %}selected{% endif %}>3</option>
-            <option value="more" {% if values.get('children')=='more' %}selected{% endif %}>more</option>
-        </select>
+        <div class="field field-4">
+            <label>Children</label>
+            <select name="children" required>
+                <option value="" disabled {% if not values.get('children') %}selected{% endif %}>-- Chọn --</option>
+                <option value="1" {% if values.get('children')=='1' %}selected{% endif %}>1</option>
+                <option value="2" {% if values.get('children')=='2' %}selected{% endif %}>2</option>
+                <option value="3" {% if values.get('children')=='3' %}selected{% endif %}>3</option>
+                <option value="more" {% if values.get('children')=='more' %}selected{% endif %}>more</option>
+            </select>
+        </div>
 
-        <label>Housing</label>
-        <select name="housing" required>
-            <option value="" disabled {% if not values.get('housing') %}selected{% endif %}>-- Chọn --</option>
-            <option value="convenient" {% if values.get('housing')=='convenient' %}selected{% endif %}>convenient
-            </option>
-            <option value="less_conv" {% if values.get('housing')=='less_conv' %}selected{% endif %}>less_conv</option>
-            <option value="critical" {% if values.get('housing')=='critical' %}selected{% endif %}>critical</option>
-        </select>
+        <div class="field field-5">
+            <label>Housing</label>
+            <select name="housing" required>
+                <option value="" disabled {% if not values.get('housing') %}selected{% endif %}>-- Chọn --</option>
+                <option value="convenient" {% if values.get('housing')=='convenient' %}selected{% endif %}>convenient
+                </option>
+                <option value="less_conv" {% if values.get('housing')=='less_conv' %}selected{% endif %}>less_conv</option>
+                <option value="critical" {% if values.get('housing')=='critical' %}selected{% endif %}>critical</option>
+            </select>
+        </div>
 
-        <label>Finance</label>
-        <select name="finance" required>
-            <option value="" disabled {% if not values.get('finance') %}selected{% endif %}>-- Chọn --</option>
-            <option value="convenient" {% if values.get('finance')=='convenient' %}selected{% endif %}>convenient
-            </option>
-            <option value="inconv" {% if values.get('finance')=='inconv' %}selected{% endif %}>inconv</option>
-        </select>
+        <div class="field field-6">
+            <label>Finance</label>
+            <select name="finance" required>
+                <option value="" disabled {% if not values.get('finance') %}selected{% endif %}>-- Chọn --</option>
+                <option value="convenient" {% if values.get('finance')=='convenient' %}selected{% endif %}>convenient
+                </option>
+                <option value="inconv" {% if values.get('finance')=='inconv' %}selected{% endif %}>inconv</option>
+            </select>
+        </div>
 
-        <label>Social</label>
-        <select name="social" required>
-            <option value="" disabled {% if not values.get('social') %}selected{% endif %}>-- Chọn --</option>
-            <option value="nonprob" {% if values.get('social')=='nonprob' %}selected{% endif %}>nonprob</option>
-            <option value="slightly_prob" {% if values.get('social')=='slightly_prob' %}selected{% endif %}>
-                slightly_prob</option>
-            <option value="problematic" {% if values.get('social')=='problematic' %}selected{% endif %}>problematic
-            </option>
-        </select>
+        <div class="field field-7">
+            <label>Social</label>
+            <select name="social" required>
+                <option value="" disabled {% if not values.get('social') %}selected{% endif %}>-- Chọn --</option>
+                <option value="nonprob" {% if values.get('social')=='nonprob' %}selected{% endif %}>nonprob</option>
+                <option value="slightly_prob" {% if values.get('social')=='slightly_prob' %}selected{% endif %}>
+                    slightly_prob</option>
+                <option value="problematic" {% if values.get('social')=='problematic' %}selected{% endif %}>problematic
+                </option>
+            </select>
+        </div>
 
-        <label>Health</label>
-        <select name="health" required>
-            <option value="" disabled {% if not values.get('health') %}selected{% endif %}>-- Chọn --</option>
-            <option value="recommended" {% if values.get('health')=='recommended' %}selected{% endif %}>recommended
-            </option>
-            <option value="priority" {% if values.get('health')=='priority' %}selected{% endif %}>priority</option>
-            <option value="not_recom" {% if values.get('health')=='not_recom' %}selected{% endif %}>not_recom</option>
-        </select>
+        <div class="field field-8">
+            <label>Health</label>
+            <select name="health" required>
+                <option value="" disabled {% if not values.get('health') %}selected{% endif %}>-- Chọn --</option>
+                <option value="recommended" {% if values.get('health')=='recommended' %}selected{% endif %}>recommended
+                </option>
+                <option value="priority" {% if values.get('health')=='priority' %}selected{% endif %}>priority</option>
+                <option value="not_recom" {% if values.get('health')=='not_recom' %}selected{% endif %}>not_recom</option>
+            </select>
+        </div>
 
         <button type="submit">Dự đoán</button>
     </form>
@@ -93,7 +110,7 @@
     {% endif %}
 
     {% if prediction %}
-    <div class="result">{{ prediction }}</div>
+    <div class="result"style="color: green;" ><label for="">Kết quả dự đoán: </label>{{ prediction }}</div>
     {% endif %}
 </body>
 
