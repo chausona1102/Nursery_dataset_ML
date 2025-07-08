@@ -112,7 +112,7 @@ def test_train_and_save_best_model():
 
     if best_model is not None:
         joblib.dump(best_model, "decision_tree_best.pkl")
-        joblib.dump(best_encoders, "lable_encoders_best.pkl")
+        joblib.dump(best_encoders, "label_encoders_best.pkl")
         print("Đã lưu mô hình tốt nhất vào decision_tree_best.pkl")
 
 # Chạy hàm để huấn luyện và lưu mô hình tốt nhất

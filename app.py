@@ -5,8 +5,8 @@ import numpy as np
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
-model = joblib.load("decision_tree_best.pkl")
-encoders = joblib.load("lable_encoders_best.pkl")
+model = joblib.load("random_forest_best.pkl")
+encoders = joblib.load("label_encoders_best.pkl")
 
 @app.route("/", methods=["GET", "POST"])
 def index():
