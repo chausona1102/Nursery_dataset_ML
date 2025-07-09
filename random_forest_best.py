@@ -36,7 +36,7 @@ def train_and_save_best_rf():
             X, y, test_size=0.2, random_state=i
         )
         model = RandomForestClassifier(
-            n_estimators=100,
+            n_estimators=200,
             class_weight='balanced',
             random_state=i,
             n_jobs=-1
