@@ -14,6 +14,8 @@ def train_and_save_best_rf():
     url = "https://archive.ics.uci.edu/ml/machine-learning-databases/nursery/nursery.data"
     data = pd.read_csv(url, header=None, names=columns)
 
+    data = data[~data['class'].isin(['very_recom', 'recommend'])]
+
     # Encode các cột
     encoders = {}
     for col in data.columns:
