@@ -38,9 +38,8 @@ def train_and_save_best_rf():
             X, y, test_size=0.2, random_state=i
         )
         model = RandomForestClassifier(
+            max_depth=15,
             n_estimators=200,
-            class_weight='balanced',
-            random_state=i,
             n_jobs=-1
         )
         model.fit(X_train, y_train)
@@ -64,7 +63,7 @@ def train_and_save_best_rf():
     if best_model is not None:
         joblib.dump(best_model, "random_forest_best.pkl")
         joblib.dump(best_encoders, "label_encoders_best.pkl")
-        print("✅ Đã lưu mô hình Random Forest tốt nhất vào random_forest_best.pkl")
+        print("Đã lưu mô hình Random Forest tốt nhất vào random_forest_best.pkl")
 
 # test ham train_and_save_best_rf()
 def test_train_and_save_best_rf():
@@ -98,9 +97,8 @@ def test_train_and_save_best_rf():
             X, y, test_size=0.2, random_state=i
         )
         model = RandomForestClassifier(
-            n_estimators=100,
-            class_weight='balanced',
-            random_state=i,
+            n_estimators=200,
+            max_depth=15,
             n_jobs=-1
         )
         model.fit(X_train, y_train)
@@ -124,7 +122,7 @@ def test_train_and_save_best_rf():
     if best_model is not None:
         joblib.dump(best_model, "random_forest_best.pkl")
         joblib.dump(best_encoders, "label_encoders_best.pkl")
-        print("✅ Đã lưu mô hình Random Forest tốt nhất vào random_forest_best.pkl")
+        print("Đã lưu mô hình Random Forest tốt nhất vào random_forest_best.pkl")
 
 
 if __name__ == "__main__":

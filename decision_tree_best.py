@@ -14,6 +14,8 @@ def train_and_save_best_model():
     url = "https://archive.ics.uci.edu/ml/machine-learning-databases/nursery/nursery.data"
     data = pd.read_csv(url, header=None, names=columns)
 
+    data = data[~data['class'].isin(['very_recom', 'recommend'])]
+
     # Encode các cột
     encoders = {}
     for col in data.columns:
@@ -35,7 +37,7 @@ def train_and_save_best_model():
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=0.2, random_state=i
         )
-        model = DecisionTreeClassifier(class_weight='balanced', random_state=i)
+        model = DecisionTreeClassifier(max_depth=15, criterion='entropy', min_samples_split=5)
         model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
         acc = model.score(X_test, y_test)
@@ -69,7 +71,8 @@ def test_train_and_save_best_model():
     ]
     url = "https://archive.ics.uci.edu/ml/machine-learning-databases/nursery/nursery.data"
     data = pd.read_csv(url, header=None, names=columns)
-
+    
+    data = data[~data['class'].isin(['very_recom', 'recommend'])]
     # Encode các cột
     encoders = {}
     for col in data.columns:
@@ -91,7 +94,7 @@ def test_train_and_save_best_model():
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=0.2, random_state=i
         )
-        model = DecisionTreeClassifier(class_weight='balanced', random_state=i)
+        model = DecisionTreeClassifier(max_depth=15, criterion='entropy', min_samples_split=5)
         model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
         acc = model.score(X_test, y_test)
