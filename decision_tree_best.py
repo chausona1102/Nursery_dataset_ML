@@ -35,7 +35,7 @@ def train_and_save_best_model():
     # Lặp lại huấn luyện 10 lần
     for i in range(10):
         X_train, X_test, y_train, y_test = train_test_split(
-            X, y, test_size=0.2, random_state=i
+            X, y, test_size=0.3, random_state=i
         )
 
         model = DecisionTreeClassifier(max_depth=15, criterion='entropy')
