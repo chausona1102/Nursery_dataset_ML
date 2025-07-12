@@ -41,7 +41,7 @@ def train_and_save_knn_euclidean():
             X, y, test_size=0.2, random_state=i
         )
 
-        model = KNeighborsClassifier(n_neighbors=9, metric='euclidean')
+        model = KNeighborsClassifier(n_neighbors=7, metric='euclidean')
         model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
 
